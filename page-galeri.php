@@ -46,4 +46,18 @@ get_header();
 
 </section>
 
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        /* --- TAMBAHAN PENTING AGAR GRID RATA TENGAH --- */
+        justify-content: center; 
+    }
+    .gallery-item {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+</style>
+
 <?php get_footer(); ?>
