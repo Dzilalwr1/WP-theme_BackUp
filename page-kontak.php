@@ -1,4 +1,9 @@
 <?php
+
+/*
+Template Name: Halaman Kontak
+*/
+
 get_header(); 
 ?>
 

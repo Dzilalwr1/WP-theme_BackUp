@@ -1,4 +1,9 @@
 <?php
+
+/*
+Template Name: Halaman Menu
+*/
+
 get_header(); 
 ?>
 

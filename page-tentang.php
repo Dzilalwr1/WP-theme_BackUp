@@ -1,4 +1,9 @@
 <?php
+
+/*
+Template Name: Halaman Tentang Kami
+*/
+
 get_header(); 
 
 // Background

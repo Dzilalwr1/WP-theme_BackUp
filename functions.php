@@ -68,6 +68,18 @@ function excacoffee_customize_register( $wp_customize ) {
 
 
     // 5. BAGIAN GALERI
+    $wp_customize->add_section('galeri_section', array(
+        'title'    => __('Halaman Galeri & Video', 'excacoffee'),
+        'priority' => 36,
+    ));
+
+    $wp_customize->add_setting('galeri_header_bg');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'galeri_header_bg', array(
+        'label'       => 'Background Judul (Captured Moments)',
+        'description' => 'Upload foto lebar (landscape) untuk background header.',
+        'section'     => 'galeri_section',
+        'priority'    => 1, 
+    )));
     $wp_customize->add_section( 'galeri_section', array( 'title' => __( 'Bagian Galeri', 'excacoffee' ), 'panel' => 'pengaturan_depan' ) );
     for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting( "galeri_gambar_{$i}" );
