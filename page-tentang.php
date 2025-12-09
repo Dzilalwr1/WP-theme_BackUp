@@ -1,12 +1,9 @@
 <?php
-
 /*
 Template Name: Halaman Tentang Kami
 */
-
 get_header(); 
 
-// Background
 $bg_image = get_theme_mod('tentang_bg_image', get_template_directory_uri() . '/assets/images/about-bg.jpg');
 ?>
 
@@ -27,8 +24,9 @@ $bg_image = get_theme_mod('tentang_bg_image', get_template_directory_uri() . '/a
             </div>
 
             <div class="about-block glass-effect">
-                <h2 class="section-title">TIM KAMI</h2>
-                <div class="team-list-container">
+                <h2 class="section-title">TIM PENGEMBANG</h2>
+                
+                <div class="team-grid-2-col">
                     <?php 
                     for ($i = 1; $i <= 10; $i++) :
                         $nama = get_theme_mod("tim_member_{$i}_nama");
@@ -38,12 +36,13 @@ $bg_image = get_theme_mod('tentang_bg_image', get_template_directory_uri() . '/a
 
                         if (!empty($nama)) :
                     ?>
-                        <div class="team-card-row">
-                            <div class="team-photo">
+                        <div class="team-card">
+                            <div class="photo-box">
                                 <img src="<?php echo esc_url($foto); ?>" alt="<?php echo esc_attr($nama); ?>">
                             </div>
-                            <div class="team-info">
+                            <div class="info-box">
                                 <h3><?php echo esc_html($nama); ?></h3>
+                                <div class="line-sep"></div>
                                 <p class="role"><?php echo esc_html($role); ?></p>
                                 <?php if (!empty($nim)) : ?>
                                     <p class="nim"><?php echo esc_html($nim); ?></p>
@@ -63,14 +62,12 @@ $bg_image = get_theme_mod('tentang_bg_image', get_template_directory_uri() . '/a
                     <?php 
                     $maps_embed = get_theme_mod('kontak_maps_embed');
                     if (!empty($maps_embed)) {
-                        // Paksa width 100%
-                        echo str_replace('width="600"', 'width="100%"', $maps_embed);
+                        echo str_replace(array('width="600"', 'width="400"'), 'width="100%"', $maps_embed);
                     } else {
-                        echo '<p style="text-align:center;">Peta belum diatur di Customizer.</p>';
+                        echo '<p style="text-align:center;">Peta belum diatur.</p>';
                     }
                     ?>
                 </div>
-                
                 <div class="address-text" style="text-align: center; margin-top: 20px;">
                     <p><?php echo nl2br(esc_html(get_theme_mod('kontak_alamat', 'Jl. Contoh No. 123, Samarinda'))); ?></p>
                 </div>

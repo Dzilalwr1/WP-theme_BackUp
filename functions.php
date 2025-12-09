@@ -252,3 +252,62 @@ function excacoffee_menu_customizer($wp_customize) {
     tambah_kontrol_menu($wp_customize, 'menu_section_exca_full', 'kanan5', 'Snack');
 }
 add_action('customize_register', 'excacoffee_menu_customizer');
+
+// --- SETUP PENGATURAN KONTAK (WA, JAM BUKA, DLL) ---
+function excacoffee_kontak_customizer($wp_customize) {
+    
+    $wp_customize->add_section('kontak_data_section', array(
+        'title'    => __('Pengaturan Kontak & Sosmed', 'excacoffee'),
+        'priority' => 37,
+    ));
+
+    // 1. WhatsApp
+    $wp_customize->add_setting('kontak_wa', array('default' => '6281234567890'));
+    $wp_customize->add_control('kontak_wa', array(
+        'label'       => 'Nomor WhatsApp (Format: 628...)',
+        'section'     => 'kontak_data_section',
+        'type'        => 'text',
+    ));
+
+    // 2. Email
+    $wp_customize->add_setting('kontak_email', array('default' => 'hello@excacoffee.com'));
+    $wp_customize->add_control('kontak_email', array(
+        'label'       => 'Alamat Email',
+        'section'     => 'kontak_data_section',
+        'type'        => 'text',
+    ));
+
+    // 3. Instagram Link
+    $wp_customize->add_setting('kontak_ig_url', array('default' => 'https://instagram.com/'));
+    $wp_customize->add_control('kontak_ig_url', array(
+        'label'       => 'Link Instagram',
+        'section'     => 'kontak_data_section',
+        'type'        => 'url',
+    ));
+
+    // 4. Jam Buka
+    $wp_customize->add_setting('kontak_jam_buka', array('default' => 'Setiap Hari: 10.00 - 23.00'));
+    $wp_customize->add_control('kontak_jam_buka', array(
+        'label'       => 'Jam Operasional',
+        'section'     => 'kontak_data_section',
+        'type'        => 'textarea',
+    ));
+    
+    // 5. Alamat (Pindahkan/Buat Baru disini biar ngumpul)
+    $wp_customize->add_setting('kontak_alamat_teks', array('default' => 'Jl. Pahlawan No. 123, Samarinda'));
+    $wp_customize->add_control('kontak_alamat_teks', array(
+        'label'       => 'Alamat Lengkap',
+        'section'     => 'kontak_data_section',
+        'type'        => 'textarea',
+    ));
+
+    // 6. LINK ORDER (GOFOOD/GRABFOOD)
+    $wp_customize->add_setting('kontak_order_url', array('default' => 'https://gofood.co.id/'));
+    $wp_customize->add_control('kontak_order_url', array(
+        'label'       => 'Link GoFood / GrabFood',
+        'description' => 'Masukkan link restoran Anda di aplikasi delivery.',
+        'section'     => 'kontak_data_section',
+        'type'        => 'url',
+    ));
+}
+add_action('customize_register', 'excacoffee_kontak_customizer');

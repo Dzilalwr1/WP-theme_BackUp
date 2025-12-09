@@ -1816,3 +1816,638 @@ header {
         margin-bottom: 15px;
     }
 }
+
+/* =========================================
+   PERBAIKAN TAMPILAN TIM (GRID SYSTEM)
+   ========================================= */
+
+/* 1. Container Grid (Otomatis Responsif) */
+.team-grid-container {
+    display: grid;
+    /* Membuat kolom sebanyak mungkin dengan lebar minimal 220px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px; /* Jarak antar kartu */
+    justify-content: center;
+    padding: 10px;
+}
+
+/* 2. Kartu Anggota Tim */
+.team-member-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center; /* Rata tengah */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Bayangan halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 5px solid var(--brown); /* Aksen warna di atas */
+}
+
+/* Efek Hover: Kartu naik sedikit */
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* 3. Foto Bulat di Tengah */
+.member-photo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto; /* Tengah horizontal & jarak bawah */
+    padding: 5px;
+    border: 2px dashed var(--brown); /* Bingkai putus-putus estetik */
+    border-radius: 50%;
+}
+
+.member-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* 4. Teks Informasi */
+.member-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 800;
+}
+
+.divider-small {
+    width: 30px;
+    height: 3px;
+    background: var(--brown);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.member-info .role {
+    font-size: 0.9rem;
+    color: var(--brown);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.member-info .nim {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Responsif di HP */
+@media (max-width: 600px) {
+    .team-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* 1 Kolom penuh di HP */
+    }
+}
+
+.about-page-wrapper {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.about-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.about-block {
+    background: #fffdea;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    border-bottom: 3px solid var(--brown, #d4a373);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 10px;
+}
+
+.section-title {
+    text-align: center; 
+    font-size: 2rem; 
+    margin-bottom: 40px; 
+    color: #444;
+}
+
+.team-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
+
+.team-member-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--brown, #d4a373);
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.member-photo-wrapper {
+    width: 120px; 
+    height: 120px;
+    margin: 0 auto 20px auto;
+    padding: 5px;
+    border: 2px dashed var(--brown, #d4a373);
+    border-radius: 50%;
+}
+
+.member-photo-wrapper img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+.member-info h3 { 
+    margin: 0; 
+    font-size: 1.1rem; 
+    color: #333; 
+    font-weight: 800; 
+}
+
+.member-info .role { 
+    font-size: 0.9rem; 
+    color: var(--brown, #d4a373); 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+.member-info .nim { 
+    font-size: 0.85rem; 
+    color: #888; 
+    margin-top: 5px; 
+}
+
+.divider-small { 
+    width: 30px; 
+    height: 3px; 
+    background: var(--brown, #d4a373); 
+    margin: 10px auto; 
+    border-radius: 2px; 
+}
+
+.maps-wrapper iframe { 
+    border-radius: 10px; 
+    height: 400px; 
+    width: 100%; 
+}
+
+@media (max-width: 768px) {
+    .about-block { padding: 30px 20px; }
+    .page-title { font-size: 2rem; }
+}
+
+
+.team-grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 10px;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--brown, #d4a373);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.photo-box {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 2px dashed var(--brown, #d4a373);
+    border-radius: 50%;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.info-box h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 800;
+}
+
+.line-sep {
+    width: 40px;
+    height: 3px;
+    background: var(--brown, #d4a373);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.info-box .role {
+    font-size: 0.95rem;
+    color: var(--brown, #d4a373);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.info-box .nim {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .team-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   HALAMAN KONTAK (MODERN SPLIT)
+   ========================================= */
+
+/* 1. HERO HEADER (Sama seperti Galeri) */
+.contact-hero {
+    position: relative; height: 350px;
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+}
+.contact-hero .hero-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* 2. LAYOUT GRID */
+#kontak-content { padding: 80px 20px; background-color: #f9f9f9; }
+
+.contact-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Kiri lebih lebar sedikit */
+    gap: 50px;
+    align-items: start;
+}
+
+/* 3. KOLOM KIRI (INFO) */
+.info-card-group {
+    background: #fff; padding: 30px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;
+}
+
+.info-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
+.info-item:last-child { margin-bottom: 0; }
+
+.icon-box {
+    width: 50px; height: 50px; background: #fdfbf7;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-right: 20px;
+    border: 1px solid #eee;
+}
+
+.text-box h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: #333; font-weight: 800; }
+.text-box p { margin: 0; color: #666; font-size: 0.95rem; }
+
+.contact-map-box iframe {
+    width: 100%; height: 300px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: block;
+}
+
+/* 4. KOLOM KANAN (FORM) */
+.form-wrapper {
+    background: #fff; padding: 40px; border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--brown, #d4a373);
+}
+
+.form-wrapper h2 { margin-top: 0; font-size: 1.8rem; color: #333; }
+.form-wrapper p { color: #777; margin-bottom: 30px; }
+
+.exca-form .form-group { margin-bottom: 20px; }
+.exca-form label { display: block; font-weight: bold; margin-bottom: 8px; color: #444; font-size: 0.9rem; }
+
+.exca-form input, 
+.exca-form textarea {
+    width: 100%; padding: 12px 15px;
+    border: 2px solid #eee; border-radius: 10px;
+    font-family: inherit; font-size: 1rem;
+    transition: 0.3s; background: #fdfdfd;
+}
+
+.exca-form input:focus, 
+.exca-form textarea:focus {
+    border-color: var(--brown, #d4a373); outline: none; background: #fff;
+}
+
+/* RESPONSIF HP */
+@media (max-width: 800px) {
+    .contact-grid-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .contact-hero { height: 250px; }
+    .form-wrapper { padding: 30px 20px; }
+}
+
+/* =========================================
+   CONTACT PAGE: MODERN FLOATING STYLE
+   ========================================= */
+
+/* 1. HERO HEADER */
+.contact-hero-modern {
+    position: relative;
+    height: 400px; /* Header Tinggi */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay-gradient {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)); /* Gradasi gelap ke bawah */
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 50px; /* Memberi ruang untuk kartu di bawah */
+}
+
+.hero-text-center h1 { font-size: 3.5rem; margin: 15px 0; font-weight: 800; }
+.hero-text-center p { font-size: 1.2rem; opacity: 0.9; }
+.badge-pill { 
+    background: var(--brown, #d4a373); padding: 5px 20px; border-radius: 50px; 
+    font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; 
+}
+
+/* 2. FLOATING CARDS (Kartu Melayang) */
+.floating-cards-container {
+    position: relative;
+    margin-top: -100px; /* KUNCI: Naik ke atas menimpa header */
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card.hover-up:hover { transform: translateY(-10px); }
+
+/* Warna Icon */
+.icon-circle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px auto;
+    color: #fff;
+}
+.bg-green { background: #25D366; } /* Warna WA */
+.bg-brown { background: var(--brown, #d4a373); }
+.bg-yellow { background: #f39c12; }
+
+.info-card h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: #333; }
+.info-card p { color: #666; margin-bottom: 20px; height: 50px; /* Biar tinggi kartu rata */ }
+
+.link-text, .social-mini a {
+    color: var(--brown, #d4a373); font-weight: bold; font-size: 0.9rem;
+}
+.status-open {
+    background: #e8f5e9; color: #2e7d32; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
+}
+
+/* 3. MAIN CONTENT (MAPS & FORM) */
+#contact-main-content {
+    padding: 80px 20px; background: #fdfbf7;
+}
+
+.split-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: stretch;
+}
+
+/* Peta */
+.map-area iframe {
+    width: 100%; height: 100%; min-height: 400px;
+    border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: none;
+}
+.map-placeholder {
+    background: #eee; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 20px;
+}
+
+/* Form */
+.form-area {
+    background: #fff; padding: 40px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.form-area h2 { margin-top: 0; color: #333; border-left: 4px solid var(--brown, #d4a373); padding-left: 15px; }
+
+.clean-form input, .clean-form textarea {
+    width: 100%; padding: 15px; margin-bottom: 20px;
+    border: 2px solid #f0f0f0; border-radius: 10px;
+    background: #f9f9f9; transition: 0.3s;
+    font-family: inherit;
+}
+.clean-form input:focus, .clean-form textarea:focus {
+    background: #fff; border-color: var(--brown, #d4a373); outline: none;
+}
+.clean-form button {
+    width: 100%; padding: 15px; background: var(--brown, #d4a373);
+    color: #fff; font-weight: bold; border: none; border-radius: 10px;
+    cursor: pointer; letter-spacing: 1px; transition: 0.3s;
+}
+.clean-form button:hover { opacity: 0.9; transform: scale(0.98); }
+
+/* RESPONSIF */
+@media (max-width: 800px) {
+    .floating-cards-container { margin-top: -50px; }
+    .split-layout { grid-template-columns: 1fr; }
+    .map-area { height: 300px; }
+    .hero-text-center h1 { font-size: 2.5rem; }
+}
+
+/* =========================================
+   CONTACT PAGE: SIMPLE CLEAN STYLE
+   ========================================= */
+
+/* 1. HEADER (Gambar Background Biasa) */
+.contact-header-simple {
+    position: relative;
+    height: 300px; /* Tinggi sedang */
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+}
+.overlay-simple {
+    background: rgba(0,0,0,0.6); /* Gelap transparan */
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.overlay-simple h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 800; }
+.overlay-simple p { font-size: 1.1rem; opacity: 0.9; }
+
+/* 2. LAYOUT KONTEN */
+#contact-simple-content {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.contact-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom sama besar */
+    gap: 60px;
+}
+
+.contact-heading {
+    font-size: 1.5rem; color: #333; margin-bottom: 25px;
+    border-left: 4px solid var(--brown, #d4a373);
+    padding-left: 15px;
+}
+
+/* 3. INFO LIST (Kiri) */
+.contact-list { margin-bottom: 40px; }
+.c-item {
+    display: flex; align-items: flex-start;
+    margin-bottom: 20px;
+}
+.c-item .icon {
+    font-size: 1.5rem; margin-right: 15px; width: 30px; text-align: center;
+}
+.c-text strong { display: block; color: #333; font-size: 1rem; }
+.c-text p { margin: 2px 0 0 0; color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+/* 4. MAPS (Kiri Bawah) */
+.simple-map iframe {
+    width: 100%; height: 300px; border: none; border-radius: 10px;
+    background: #eee;
+}
+.map-placeholder {
+    width: 100%; height: 250px; background: #eee;
+    display: flex; align-items: center; justify-content: center; color: #999;
+    border-radius: 10px;
+}
+
+/* =========================================
+   CONTACT PAGE: SIMPLE ORDER STYLE
+   ========================================= */
+
+/* 1. HEADER (Sama seperti sebelumnya) */
+.contact-header-simple {
+    position: relative; height: 300px;
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+}
+.overlay-simple {
+    background: rgba(0,0,0,0.6); width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.overlay-simple h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 800; }
+.overlay-simple p { font-size: 1.1rem; opacity: 0.9; }
+
+/* 2. LAYOUT UTAMA */
+#contact-simple-content { padding: 60px 20px; background-color: #fff; }
+.contact-split-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; }
+
+/* 3. INFO KIRI */
+.contact-heading {
+    font-size: 1.5rem; color: #333; margin-bottom: 25px;
+    border-left: 4px solid var(--brown, #d4a373); padding-left: 15px;
+}
+.contact-list { margin-bottom: 40px; }
+.c-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
+.c-item .icon { font-size: 1.5rem; margin-right: 15px; width: 30px; text-align: center; }
+.c-text strong { display: block; color: #333; font-size: 1rem; }
+.c-text p { margin: 2px 0 0 0; color: #666; font-size: 0.95rem; }
+
+/* Maps */
+.simple-map iframe { width: 100%; height: 300px; border: none; border-radius: 10px; background: #eee; }
+.map-placeholder { width: 100%; height: 250px; background: #eee; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #999; }
+
+/* 4. KOTAK ORDER (KANAN) */
+.order-box-sticky {
+    background: #fdfbf7; /* Warna hangat muda */
+    border: 2px dashed var(--brown, #d4a373); /* Border putus-putus estetik */
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    position: sticky; top: 100px; /* Biar ngikut pas discroll */
+}
+
+.order-box-sticky h3 { font-size: 1.8rem; margin-top: 0; color: #333; }
+.order-box-sticky p { color: #666; margin-bottom: 30px; }
+
+.btn-order-big {
+    display: block; width: 100%; padding: 15px;
+    background: var(--brown, #d4a373); color: #fff;
+    font-weight: bold; border-radius: 10px;
+    text-transform: uppercase; letter-spacing: 1px;
+    transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.btn-order-big:hover { background: #333; transform: translateY(-3px); }
+
+.separator-text { margin: 15px 0; color: #999; font-size: 0.8rem; font-weight: bold; }
+
+.btn-wa-outline {
+    display: block; width: 100%; padding: 12px;
+    border: 2px solid var(--brown, #d4a373); color: var(--brown, #d4a373);
+    font-weight: bold; border-radius: 10px;
+    transition: 0.3s;
+}
+.btn-wa-outline:hover { background: var(--brown, #d4a373); color: #fff; }
+
+.mini-note { margin-top: 20px; font-size: 0.75rem; color: #aaa; font-style: italic; }
+
+/* RESPONSIF */
+@media (max-width: 768px) {
+    .contact-split-layout { grid-template-columns: 1fr; gap: 40px; }
+    .order-box-sticky { position: static; padding: 30px 20px; }
+}
