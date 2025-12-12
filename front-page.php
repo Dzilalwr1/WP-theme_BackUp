@@ -26,7 +26,7 @@ $hero_bg_url = get_theme_mod('beranda_bg', get_template_directory_uri() . '/asse
             <span class="about-label">OUR STORY</span>
             <h2><?php echo esc_html(get_theme_mod('about_singkat_judul', 'Cerita Kami')); ?></h2>
             
-            <p><?php echo nl2br(esc_html(get_theme_mod('about_singkat_deskripsi', 'Exca Coffee hadir untuk menyajikan kopi terbaik...'))); ?></p>
+            <p><?php echo nl2br(esc_html(get_theme_mod('about_singkat_teks', 'Exca Coffee hadir untuk menyajikan kopi terbaik...'))); ?></p>
             
             <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>" class="cta-button primary-cta">SELENGKAPNYA ></a>
         </div>
